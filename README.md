@@ -1,30 +1,36 @@
 # Ros noetic description package for the onrobot 2fg7 gripper
 ------
 ## General info
-This repository contains the URDF for the [onrobot 2fg7 gripper](https://onrobot.com/en/products/2fg7). It also has a simple control implementation to be used with gazebo simulator
-this was developed using the [fusion 360 to urdf script](https://github.com/syuntoku14/fusion2urdf) and CAD files taken from the onrobot official webpage.
+This repository contains the URDF and meshes for the [OnRobot 2FG7 gripper](https://onrobot.com/en/products/2fg7).  
+It also has a simple control implementation to be used with Gazebo simulator.  
+
+The model was developed using the [Fusion 360 to URDF script](https://github.com/syuntoku14/fusion2urdf) and CAD files taken from the OnRobot official webpage.
+
 ## Installation and ussage:
 1. Install dependencies (from source):
-  * [grasp fix gazebo plugin](https://github.com/JenniferBuehler/gazebo-pkgs/wiki/Installation)
+From source (if not already available in your ROS 2 distribution):
+- [mimic joint fix plugin](https://github.com/roboticsgroup/roboticsgroup_upatras_gazebo_plugins) – ROS 2 fork or migration may be required.
+- [gazebo_ros_pkgs](https://github.com/ros-simulation/gazebo_ros_pkgs) (for Gazebo integration).
 
-  * [mimic joint fix plugin](https://github.com/roboticsgroup/roboticsgroup_upatras_gazebo_plugins) 
   
 2. Install this package:
 ```
-cd <your-catkin-ws>/src
+bash
+cd ~/ros2_ws/src
 git clone https://github.com/juandpenan/onrobot_2FG7_gripper_description
-cd ..
-catkin build onrobot_2fg7_description
+cd ~/ros2_ws
+colcon build --symlink-install
+source install/setup.bash
 ```
 
 3. Launch:
 
   * Display the gripper with RVIZ:
   ```
-  roslaunch onrobot_2fg7_description display.launch
+  ros2 launch onrobot_2fg7_description display_launch.py
   ```
   
-  * Launch gazebo: 
+  * Launch gazebo with controllers: 
   ```
-  roslaunch onrobot_2fg7_description gazebo_control.launch
+  ros2 launch onrobot_2fg7_description gazebo_control_launch.py
   ```

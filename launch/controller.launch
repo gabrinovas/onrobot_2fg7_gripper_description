@@ -1,10 +1,38 @@
-<launch>
+# launch/controller_launch.py
+from launch import LaunchDescription
+from launch_ros.actions import Node
 
-<rosparam file="$(find onrobot_2fg7_description)/launch/controller.yaml" command="load"/>
-<node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="onrobot_2fg7" args="lef_finger_joint_position_controller joint_state_controller "/>
-<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
-  <remap from="/joint_states" to="/onrobot_2fg7/joint_states"/>
-</node>
+def generate_launch_description():
+    return LaunchDescription([
+        # Cargar parámetros del YAML en controller_manager
+        Node(
+            package="controller_manager",
+            executable="ros2_control_node",
+            parameters=["config/controller.yaml"],
+            output="screen"
+        ),
 
-</launch>
+        # Spawner del joint state broadcaster
+        Node(
+            package="controller_manager",
+            executable="spawner",
+            arguments=["joint_state_broadcaster"],
+            output="screen"
+        ),
 
+        # Spawner del controlador del dedo
+        Node(
+            package="controller_manager",
+            executable="spawner",
+            arguments=["left_finger_controller"],
+            output="screen"
+        ),
+
+        # Robot State Publisher
+        Node(
+            package="robot_state_publisher",
+            executable="robot_state_publisher",
+            output="screen",
+            parameters=[{"use_sim_time": True}]
+        )
+    ])
