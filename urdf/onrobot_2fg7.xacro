@@ -20,14 +20,14 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://onrobot_2fg7_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+          <mesh filename="package://onrobot_2fg7_description/urdf/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
         </geometry>
         <material name="silver"/>
       </visual>
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://onrobot_2fg7_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+          <mesh filename="package://onrobot_2fg7_description/urdf/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
         </geometry>
       </collision>
     </link>
@@ -41,14 +41,14 @@
       <visual>
         <origin xyz="0.054361 0.029494 -0.12005" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://onrobot_2fg7_description/meshes/right_finger_link.stl" scale="0.001 0.001 0.001"/>
+          <mesh filename="package://onrobot_2fg7_description/urdf/meshes/right_finger_link.stl" scale="0.001 0.001 0.001"/>
         </geometry>
         <material name="silver"/>
       </visual>
       <collision name="right_finger_collision">
         <origin xyz="0.054361 0.029494 -0.12005" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://onrobot_2fg7_description/meshes/right_finger_link.stl" scale="0.001 0.001 0.001"/>
+          <mesh filename="package://onrobot_2fg7_description/urdf/meshes/right_finger_link.stl" scale="0.001 0.001 0.001"/>
         </geometry>
       </collision>
     </link>
@@ -62,14 +62,14 @@
       <visual>
         <origin xyz="-0.032239 0.029494 -0.12005" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://onrobot_2fg7_description/meshes/left_finger_link.stl" scale="0.001 0.001 0.001"/>
+          <mesh filename="package://onrobot_2fg7_description/urdf/meshes/left_finger_link.stl" scale="0.001 0.001 0.001"/>
         </geometry>
         <material name="silver"/>
       </visual>
       <collision name="left_finger_collision">
         <origin xyz="-0.032239 0.029494 -0.12005" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://onrobot_2fg7_description/meshes/left_finger_link.stl" scale="0.001 0.001 0.001"/>
+          <mesh filename="package://onrobot_2fg7_description/urdf/meshes/left_finger_link.stl" scale="0.001 0.001 0.001"/>
         </geometry>
       </collision>
     </link>
@@ -103,14 +103,14 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://onrobot_2fg7_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+          <mesh filename="package://onrobot_2fg7_description/urdf/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
         </geometry>
         <material name="silver"/>
       </visual>
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://onrobot_2fg7_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+          <mesh filename="package://onrobot_2fg7_description/urdf/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
         </geometry>
       </collision>
     </link>
@@ -124,14 +124,14 @@
       <visual>
         <origin xyz="0.054361 0.029494 -0.12005" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://onrobot_2fg7_description/meshes/inwards/right_finger_link.stl" scale="0.001 0.001 0.001"/>
+          <mesh filename="package://onrobot_2fg7_description/urdf/meshes/inwards/right_finger_link.stl" scale="0.001 0.001 0.001"/>
         </geometry>
         <material name="silver"/>
       </visual>
       <collision>
         <origin xyz="0.054361 0.029494 -0.12005" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://onrobot_2fg7_description/meshes/inwards/right_finger_link.stl" scale="0.001 0.001 0.001"/>
+          <mesh filename="package://onrobot_2fg7_description/urdf/meshes/inwards/right_finger_link.stl" scale="0.001 0.001 0.001"/>
         </geometry>
       </collision>
     </link>
@@ -145,14 +145,14 @@
       <visual>
         <origin xyz="-0.032239 0.029494 -0.12005" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://onrobot_2fg7_description/meshes/inwards/left_finger_link.stl" scale="0.001 0.001 0.001"/>
+          <mesh filename="package://onrobot_2fg7_description/urdf/meshes/inwards/left_finger_link.stl" scale="0.001 0.001 0.001"/>
         </geometry>
         <material name="silver"/>
       </visual>
       <collision>
         <origin xyz="-0.032239 0.029494 -0.12005" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://onrobot_2fg7_description/meshes/inwards/left_finger_link.stl" scale="0.001 0.001 0.001"/>
+          <mesh filename="package://onrobot_2fg7_description/urdf/meshes/inwards/left_finger_link.stl" scale="0.001 0.001 0.001"/>
         </geometry>
       </collision>
     </link>
