@@ -7,7 +7,7 @@ from ament_index_python.packages import get_package_share_directory
 import os
 
 def generate_launch_description():
-    pkg_share = get_package_share_directory('onrobot_2fg7_description')
+    pkg_share = get_package_share_directory('onrobot_2FG7_gripper_description')
 
     gazebo_launch = os.path.join(
         get_package_share_directory('gazebo_ros'), 'launch', 'gazebo.launch.py'

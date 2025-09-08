@@ -27,10 +27,10 @@ source install/setup.bash
 
   * Display the gripper with RVIZ:
   ```
-  ros2 launch onrobot_2fg7_description display_launch.py
+  ros2 launch onrobot_2FG7_gripper_description display_launch.py
   ```
   
   * Launch gazebo with controllers: 
   ```
-  ros2 launch onrobot_2fg7_description gazebo_control_launch.py
+  ros2 launch onrobot_2FG7_gripper_description gazebo_control_launch.py
   ```
