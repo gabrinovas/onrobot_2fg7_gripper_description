@@ -1,11 +1,13 @@
 <?xml version="1.0" ?>
 <robot name="2fg7_outwards" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-<xacro:include filename="$(find onrobot_2fg7_description)/urdf/materials.xacro" />
-<xacro:include filename="$(find onrobot_2fg7_description)/urdf/onrobot_2fg7.trans.xacro" />
-<xacro:include filename="$(find onrobot_2fg7_description)/urdf/onrobot_2fg7.gazebo" />
+<xacro:include filename="$(find onrobot_2fg7_gripper_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find onrobot_2fg7_gripper_description)/urdf/onrobot_2fg7.trans.xacro" />
+<xacro:include filename="$(find onrobot_2fg7_gripper_description)/urdf/onrobot_2fg7.gazebo" />
 <xacro:gripper_transmission/>
 <xacro:gazebo_control is_control_on="false" />
+
+</robot>
 
 <xacro:macro name="onrobot_2fg7_gripper" params="prefix finger_configuration=outwards">
 
@@ -20,14 +22,14 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://onrobot_2fg7_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+          <mesh filename="package://onrobot_2fg7_gripper_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
         </geometry>
         <material name="silver"/>
       </visual>
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://onrobot_2fg7_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+          <mesh filename="package://onrobot_2fg7_gripper_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
         </geometry>
       </collision>
     </link>
@@ -41,14 +43,14 @@
       <visual>
         <origin xyz="0.054361 0.029494 -0.12005" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://onrobot_2fg7_description/meshes/right_finger_link.stl" scale="0.001 0.001 0.001"/>
+          <mesh filename="package://onrobot_2fg7_gripper_description/meshes/right_finger_link.stl" scale="0.001 0.001 0.001"/>
         </geometry>
         <material name="silver"/>
       </visual>
       <collision name="right_finger_collision">
         <origin xyz="0.054361 0.029494 -0.12005" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://onrobot_2fg7_description/meshes/right_finger_link.stl" scale="0.001 0.001 0.001"/>
+          <mesh filename="package://onrobot_2fg7_gripper_description/meshes/right_finger_link.stl" scale="0.001 0.001 0.001"/>
         </geometry>
       </collision>
     </link>
@@ -62,14 +64,14 @@
       <visual>
         <origin xyz="-0.032239 0.029494 -0.12005" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://onrobot_2fg7_description/meshes/left_finger_link.stl" scale="0.001 0.001 0.001"/>
+          <mesh filename="package://onrobot_2fg7_gripper_description/meshes/left_finger_link.stl" scale="0.001 0.001 0.001"/>
         </geometry>
         <material name="silver"/>
       </visual>
       <collision name="left_finger_collision">
         <origin xyz="-0.032239 0.029494 -0.12005" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://onrobot_2fg7_description/meshes/left_finger_link.stl" scale="0.001 0.001 0.001"/>
+          <mesh filename="package://onrobot_2fg7_gripper_description/meshes/left_finger_link.stl" scale="0.001 0.001 0.001"/>
         </geometry>
       </collision>
     </link>
@@ -103,14 +105,14 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://onrobot_2fg7_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+          <mesh filename="package://onrobot_2fg7_gripper_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
         </geometry>
         <material name="silver"/>
       </visual>
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://onrobot_2fg7_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+          <mesh filename="package://onrobot_2fg7_gripper_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
         </geometry>
       </collision>
     </link>
@@ -124,14 +126,14 @@
       <visual>
         <origin xyz="0.054361 0.029494 -0.12005" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://onrobot_2fg7_description/meshes/inwards/right_finger_link.stl" scale="0.001 0.001 0.001"/>
+          <mesh filename="package://onrobot_2fg7_gripper_description/meshes/inwards/right_finger_link.stl" scale="0.001 0.001 0.001"/>
         </geometry>
         <material name="silver"/>
       </visual>
       <collision>
         <origin xyz="0.054361 0.029494 -0.12005" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://onrobot_2fg7_description/meshes/inwards/right_finger_link.stl" scale="0.001 0.001 0.001"/>
+          <mesh filename="package://onrobot_2fg7_gripper_description/meshes/inwards/right_finger_link.stl" scale="0.001 0.001 0.001"/>
         </geometry>
       </collision>
     </link>
@@ -145,14 +147,14 @@
       <visual>
         <origin xyz="-0.032239 0.029494 -0.12005" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://onrobot_2fg7_description/meshes/inwards/left_finger_link.stl" scale="0.001 0.001 0.001"/>
+          <mesh filename="package://onrobot_2fg7_gripper_description/meshes/inwards/left_finger_link.stl" scale="0.001 0.001 0.001"/>
         </geometry>
         <material name="silver"/>
       </visual>
       <collision>
         <origin xyz="-0.032239 0.029494 -0.12005" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://onrobot_2fg7_description/meshes/inwards/left_finger_link.stl" scale="0.001 0.001 0.001"/>
+          <mesh filename="package://onrobot_2fg7_gripper_description/meshes/inwards/left_finger_link.stl" scale="0.001 0.001 0.001"/>
         </geometry>
       </collision>
     </link>

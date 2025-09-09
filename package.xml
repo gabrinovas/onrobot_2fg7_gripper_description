@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package format="3">
-  <name>onrobot_2fg7_description</name>
+  <name>onrobot_2fg7_gripper_description</name>
   <version>0.0.1</version>
-  <description>The onrobot_2fg7_description package adapted for ROS 2</description>
+  <description>The onrobot_2fg7_gripper_description package adapted for ROS 2</description>
 
   <maintainer email="gabri.novas@aimen.es">Gabriel Novas</maintainer>
 
