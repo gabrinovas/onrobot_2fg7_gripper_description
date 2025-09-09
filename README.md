@@ -17,7 +17,7 @@ From source (if not already available in your ROS 2 distribution):
 ```
 bash
 cd ~/ros2_ws/src
-git clone https://github.com/juandpenan/onrobot_2FG7_gripper_description
+git clone https://github.com/gabrinovas/onrobot_2FG7_gripper_description
 cd ~/ros2_ws
 colcon build --symlink-install
 source install/setup.bash
