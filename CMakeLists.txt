@@ -13,7 +13,8 @@ include_directories(
 )
 
 # Install URDF/Xacro files
-install(DIRECTORY urdf meshes launch
+install(
+  DIRECTORY launch meshes urdf
   DESTINATION share/${PROJECT_NAME}
 )
 

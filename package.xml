@@ -12,6 +12,8 @@
   <buildtool_depend>ament_cmake</buildtool_depend>
 
   <!-- Dependencies -->
+  <depend>urdf</depend>
+  <depend>ros2launch</depend>
   <depend>rclpy</depend>
   <depend>gazebo_ros</depend>
   <depend>robot_state_publisher</depend>
