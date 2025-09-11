@@ -7,15 +7,14 @@ find_package(robot_state_publisher REQUIRED)
 find_package(xacro REQUIRED)
 find_package(gazebo_ros REQUIRED)
 
-# Include directories
-include_directories(
-  include
-)
-
-# Install URDF/Xacro files
+# Install files from the launch, meshes, and urdf directories
 install(
-  DIRECTORY launch meshes urdf
-  DESTINATION share/${PROJECT_NAME}
+  DIRECTORY
+    launch
+    meshes
+    urdf
+  DESTINATION
+    share/${PROJECT_NAME}
 )
 
 ament_package()
