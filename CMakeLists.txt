@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(onrobot_2fg7_description)
+project(onrobot_2fg7_gripper_description)
 
 find_package(ament_cmake REQUIRED)
 find_package(rclpy REQUIRED)
@@ -13,7 +13,7 @@ include_directories(
 )
 
 # Install URDF/Xacro files
-install(DIRECTORY urdf launch
+install(DIRECTORY urdf meshes launch
   DESTINATION share/${PROJECT_NAME}
 )
 

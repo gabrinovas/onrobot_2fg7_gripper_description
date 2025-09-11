@@ -17,7 +17,7 @@ From source (if not already available in your ROS 2 distribution):
 ```
 bash
 cd ~/ros2_ws/src
-git clone https://github.com/juandpenan/onrobot_2fg7_gripper_description
+git clone https://github.com/gabrinovas/onrobot_2fg7_gripper_description
 cd ~/ros2_ws
 colcon build --symlink-install
 source install/setup.bash
@@ -27,10 +27,10 @@ source install/setup.bash
 
   * Display the gripper with RVIZ:
   ```
-  ros2 launch onrobot_2fg7_description display_launch.py
+  ros2 launch onrobot_2FG7_gripper_description display_launch.py
   ```
   
   * Launch gazebo with controllers: 
   ```
-  ros2 launch onrobot_2fg7_description gazebo_control_launch.py
+  ros2 launch onrobot_2FG7_gripper_description gazebo_control_launch.py
   ```
