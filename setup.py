@@ -1,6 +1,6 @@
 from setuptools import find_packages, setup
 
-package_name = 'onrobot_2FG7_gripper_description'
+package_name = 'onrobot_2fg7_gripper_description'
 
 setup(
     name=package_name,

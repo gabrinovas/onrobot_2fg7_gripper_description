@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package format="3">
-  <name>onrobot_2FG7_gripper_description</name>
+  <name>onrobot_2fg7_gripper_description</name>
   <version>0.0.1</version>
-  <description>The onrobot_2FG7_gripper_description package adapted for ROS 2</description>
+  <description>The onrobot_2fg7_gripper_description package adapted for ROS 2</description>
 
   <maintainer email="gabri.novas@aimen.es">Gabriel Novas</maintainer>
 
@@ -12,12 +12,16 @@
   <buildtool_depend>ament_cmake</buildtool_depend>
 
   <!-- Dependencies -->
+  <depend>launch_ros</depend>
+  <depend>launch</depend>
   <depend>rclpy</depend>
   <depend>gazebo_ros</depend>
   <depend>robot_state_publisher</depend>
+  <depend>ros2_control</depend>
   <depend>xacro</depend>
+  <depend>urdf</depend>
 
   <export>
-    <!-- No export tags needed for simple description package -->
+    <build_type>ament_cmake</build_type>
   </export>
 </package>
