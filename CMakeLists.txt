@@ -5,6 +5,7 @@ find_package(ament_cmake REQUIRED)
 find_package(rclpy REQUIRED)
 find_package(robot_state_publisher REQUIRED)
 find_package(xacro REQUIRED)
+find_package(urdf REQUIRED)
 find_package(gazebo_ros REQUIRED)
 
 # Install files from the launch, meshes, and urdf directories
