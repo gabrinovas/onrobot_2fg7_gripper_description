@@ -6,6 +6,14 @@
   <xacro:include filename="$(find onrobot_2fg7_gripper_description)/urdf/onrobot_2fg7.gazebo" />
 
   <xacro:macro name="onrobot_2fg7_gripper" params="parent prefix finger_configuration=outwards">
+    
+    <!-- CRITICAL FIX: Add joint to connect gripper base to parent link -->
+    <joint name="${prefix}base_joint" type="fixed">
+      <parent link="${parent}"/>
+      <child link="${prefix}base_link"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+
     <xacro:gripper_transmission/>
     <xacro:gazebo_control is_control_on="false" />
 
