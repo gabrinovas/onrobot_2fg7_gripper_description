@@ -1,36 +1,41 @@
-# Ros noetic description package for the onrobot 2fg7 gripper
-------
-## General info
-This repository contains the URDF and meshes for the [OnRobot 2FG7 gripper](https://onrobot.com/en/products/2fg7).  
-It also has a simple control implementation to be used with Gazebo simulator.  
+# OnRobot 2FG7 Gripper Description for ROS2
 
-The model was developed using the [Fusion 360 to URDF script](https://github.com/syuntoku14/fusion2urdf) and CAD files taken from the OnRobot official webpage.
+URDF description and meshes for the OnRobot 2FG7 gripper, compatible with ROS2 Humble.
 
-## Installation and ussage:
-1. Install dependencies (from source):
-From source (if not already available in your ROS 2 distribution):
-- [mimic joint fix plugin](https://github.com/roboticsgroup/roboticsgroup_upatras_gazebo_plugins) – ROS 2 fork or migration may be required.
-- [gazebo_ros_pkgs](https://github.com/ros-simulation/gazebo_ros_pkgs) (for Gazebo integration).
+## Features
 
-  
-2. Install this package:
-```
-bash
+- Complete URDF model with accurate geometry
+- High-quality mesh files
+- RViz configuration for visualization
+- ROS2 Humble compatibility
+
+## Installation
+
+### Prerequisites
+- ROS2 Humble ([installation guide](https://docs.ros.org/en/humble/Installation.html))
+- Colcon build system: `sudo apt install python3-colcon-common-extensions`
+
+### Build Instructions
+
+1. **Create a ROS2 workspace** (if you don't have one):
+```bash
+mkdir -p ~/ros2_ws/src
 cd ~/ros2_ws/src
-git clone https://github.com/gabrinovas/onrobot_2fg7_gripper_description
-cd ~/ros2_ws
-colcon build --symlink-install
-source install/setup.bash
+```
+  
+2. Clone this repository:
+```
+git clone https://github.com/gabrinovas/onrobot_2fg7_gripper_description.git
 ```
 
-3. Launch:
+3. Build the package:
 
-  * Display the gripper with RVIZ:
-  ```
-  ros2 launch onrobot_2fg7_gripper_description display_launch.py
-  ```
-  
-  * Launch gazebo with controllers: 
-  ```
-  ros2 launch onrobot_2fg7_gripper_description gazebo_control_launch.py
-  ```
+```
+cd ~/ros2_ws
+colcon build --packages-select onrobot_2fg7_gripper_description
+```
+
+4. Source the workspace:
+```
+source ~/ros2_ws/install/setup.bash
+```

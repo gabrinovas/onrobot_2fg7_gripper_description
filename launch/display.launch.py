@@ -1,52 +1,48 @@
-# launch/display_launch.py
-from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument
-from launch.substitutions import LaunchConfiguration, Command, PathJoinSubstitution
-from launch_ros.actions import Node
-from launch_ros.parameter_descriptions import ParameterValue
 import os
 from ament_index_python.packages import get_package_share_directory
+from launch import LaunchDescription
+from launch.actions import ExecuteProcess, IncludeLaunchDescription
+from launch.launch_description_sources import PythonLaunchDescriptionSource
+from launch_ros.actions import Node
 
 def generate_launch_description():
-    pkg_share = get_package_share_directory('onrobot_2fg7_gripper_description')
-
-    default_model_path = os.path.join(pkg_share, 'urdf', 'onrobot_2fg7_upload.xacro')
-    default_rviz_config_path = os.path.join(pkg_share, 'launch', 'urdf.rviz')
-
-    # Generate robot description from xacro - FIXED SYNTAX
-    robot_description_content = Command([
-        'xacro ', default_model_path
-    ])
-
+    # Get the package directory
+    pkg_dir = get_package_share_directory('onrobot_2fg7_gripper_description')
+    
+    # RViz configuration file
+    rviz_config = os.path.join(pkg_dir, 'config', 'view_robot.rviz')
+    
+    # URDF file
+    urdf_file = os.path.join(pkg_dir, 'urdf', 'onrobot_2fg7.urdf.xacro')
+    
+    # Robot State Publisher node
+    robot_state_publisher = Node(
+        package='robot_state_publisher',
+        executable='robot_state_publisher',
+        name='robot_state_publisher',
+        output='screen',
+        arguments=[urdf_file]
+    )
+    
+    # Joint State Publisher node
+    joint_state_publisher = Node(
+        package='joint_state_publisher_gui',
+        executable='joint_state_publisher_gui',
+        name='joint_state_publisher_gui',
+        output='screen'
+    )
+    
+    # RViz2 node
+    rviz2 = Node(
+        package='rviz2',
+        executable='rviz2',
+        name='rviz2',
+        output='screen',
+        arguments=['-d', rviz_config]
+    )
+    
     return LaunchDescription([
-        DeclareLaunchArgument(name='model', default_value=default_model_path,
-                              description='Absolute path to robot urdf file'),
-        DeclareLaunchArgument(name='rvizconfig', default_value=default_rviz_config_path,
-                              description='Absolute path to rviz config file'),
-
-        Node(
-            package='robot_state_publisher',
-            executable='robot_state_publisher',
-            name='robot_state_publisher',
-            output='screen',
-            parameters=[{
-                'robot_description': ParameterValue(robot_description_content, value_type=str),
-                'use_sim_time': False
-            }]
-        ),
-
-        Node(
-            package='joint_state_publisher_gui',
-            executable='joint_state_publisher_gui',
-            name='joint_state_publisher_gui',
-            output='screen'
-        ),
-
-        Node(
-            package='rviz2',
-            executable='rviz2',
-            name='rviz2',
-            arguments=['-d', LaunchConfiguration('rvizconfig')],
-            output='screen'
-        )
+        robot_state_publisher,
+        joint_state_publisher,
+        rviz2
     ])
