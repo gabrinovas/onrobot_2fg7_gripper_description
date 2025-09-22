@@ -4,10 +4,10 @@
   <xacro:include filename="$(find onrobot_2fg7_gripper_description)/urdf/materials.xacro" />
   <xacro:include filename="$(find onrobot_2fg7_gripper_description)/urdf/onrobot_2fg7.trans.xacro" />
   <xacro:include filename="$(find onrobot_2fg7_gripper_description)/urdf/onrobot_2fg7.gazebo" />
-  <xacro:gripper_transmission/>
-  <xacro:gazebo_control is_control_on="false" />
 
   <xacro:macro name="onrobot_2fg7_gripper" params="prefix finger_configuration=outwards">
+    <xacro:gripper_transmission/>
+    <xacro:gazebo_control is_control_on="false" />
 
     <xacro:property name="config" value="${finger_configuration}"/>
     <xacro:if value="${config == 'outwards'}">

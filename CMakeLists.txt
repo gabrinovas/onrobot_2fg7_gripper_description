@@ -1,12 +1,8 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.8)
 project(onrobot_2fg7_gripper_description)
 
+# Find dependencies
 find_package(ament_cmake REQUIRED)
-find_package(rclpy REQUIRED)
-find_package(robot_state_publisher REQUIRED)
-find_package(xacro REQUIRED)
-find_package(urdf REQUIRED)
-find_package(gazebo_ros REQUIRED)
 
 # Install files from the launch, meshes, and urdf directories
 install(

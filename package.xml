@@ -16,10 +16,12 @@
   <depend>launch</depend>
   <depend>rclpy</depend>
   <depend>gazebo_ros</depend>
-  <depend>robot_state_publisher</depend>
   <depend>ros2_control</depend>
-  <depend>xacro</depend>
   <depend>urdf</depend>
+  <depend>xacro</depend>
+  <depend>robot_state_publisher</depend>
+  <depend>joint_state_publisher</depend>
+  <depend>rviz2</depend>
 
   <export>
     <build_type>ament_cmake</build_type>

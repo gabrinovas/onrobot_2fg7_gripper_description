@@ -1,7 +1,7 @@
 # launch/display_launch.py
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, ExecuteProcess
-from launch.substitutions import LaunchConfiguration, Command, FindExecutable, PathJoinSubstitution
+from launch.actions import DeclareLaunchArgument
+from launch.substitutions import LaunchConfiguration, Command, PathJoinSubstitution
 from launch_ros.actions import Node
 from launch_ros.parameter_descriptions import ParameterValue
 import os
@@ -13,12 +13,10 @@ def generate_launch_description():
     default_model_path = os.path.join(pkg_share, 'urdf', 'onrobot_2fg7_upload.xacro')
     default_rviz_config_path = os.path.join(pkg_share, 'launch', 'urdf.rviz')
 
-    # Generate robot description from xacro
+    # Generate robot description from xacro - FIXED SYNTAX
     robot_description_content = Command([
         'xacro ', default_model_path
     ])
-
-    robot_description = {'robot_description': ParameterValue(robot_description_content, value_type=str)}
 
     return LaunchDescription([
         DeclareLaunchArgument(name='model', default_value=default_model_path,
@@ -31,7 +29,10 @@ def generate_launch_description():
             executable='robot_state_publisher',
             name='robot_state_publisher',
             output='screen',
-            parameters=[robot_description, {'use_sim_time': False}]  # Changed to False unless using simulation
+            parameters=[{
+                'robot_description': ParameterValue(robot_description_content, value_type=str),
+                'use_sim_time': False
+            }]
         ),
 
         Node(
