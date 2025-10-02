@@ -172,7 +172,7 @@
         <child link="${prefix}left_finger_link"/>
         <axis xyz="-1.0 0.0 0.0"/>
         <!-- FIX: Each finger moves 20mm from center (35mm to 75mm total) -->
-        <limit lower="0.0" upper="0.020" effort="100" velocity="0.45"/>
+        <limit lower="0.0175" upper="0.0375" effort="100" velocity="0.45"/>
       </joint>
 
       <joint name="right_finger_joint" type="prismatic">
@@ -181,7 +181,7 @@
         <child link="${prefix}right_finger_link"/>
         <axis xyz="1.0 0.0 0.0"/>
         <!-- FIX: Mirror the left finger -->
-        <limit lower="-0.020" upper="0.0" effort="100" velocity="0.45"/>
+        <limit lower="-0.0375" upper="-0.0175" effort="100" velocity="0.45"/>
         <mimic joint="left_finger_joint" multiplier="1.0"/>
       </joint>
 
