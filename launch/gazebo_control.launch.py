@@ -46,7 +46,7 @@ def generate_launch_description():
         Node(
             package="controller_manager",
             executable="spawner",
-            arguments=["left_finger_controller"],
+            arguments=["onrobot_2fg7_gripper_controller"],
             output="screen"
         )
     ])
