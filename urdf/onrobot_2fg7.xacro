@@ -165,23 +165,23 @@
         </collision>
       </link>
 
-      <!-- CORRECTED limits for 2FG7 gripper -->
+      <!-- For outward configuration -->
       <joint name="left_finger_joint" type="prismatic">
-        <origin xyz="0.035 -0.029494 0.12005" rpy="0 0 0"/>
+        <origin xyz="0.032239 -0.029494 0.12005" rpy="0 0 0"/>
         <parent link="${prefix}base_link"/>
         <child link="${prefix}left_finger_link"/>
         <axis xyz="-1.0 0.0 0.0"/>
-        <!-- FIX: Each finger moves 20mm from center (35mm to 75mm total) -->
-        <limit lower="0.0175" upper="0.0375" effort="100" velocity="0.45"/>
+        <!-- CORRECTED: Each finger moves 20mm from center (35mm to 75mm total) -->
+        <limit lower="0.0" upper="0.020" effort="140" velocity="0.45"/>
       </joint>
 
       <joint name="right_finger_joint" type="prismatic">
-        <origin xyz="-0.035 -0.029494 0.12005" rpy="0 0 0"/>
+        <origin xyz="-0.054361 -0.029494 0.12005" rpy="0 0 0"/>
         <parent link="${prefix}base_link"/>
         <child link="${prefix}right_finger_link"/>
         <axis xyz="1.0 0.0 0.0"/>
-        <!-- FIX: Mirror the left finger -->
-        <limit lower="-0.0375" upper="-0.0175" effort="100" velocity="0.45"/>
+        <!-- CORRECTED: Mirror the left finger -->
+        <limit lower="-0.020" upper="0.0" effort="140" velocity="0.45"/>
         <mimic joint="left_finger_joint" multiplier="1.0"/>
       </joint>
 
