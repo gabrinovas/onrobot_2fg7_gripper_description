@@ -171,7 +171,7 @@
         <parent link="${prefix}base_link"/>
         <child link="${prefix}left_finger_link"/>
         <axis xyz="-1.0 0.0 0.0"/>
-        <!-- CORRECTED: Each finger moves 20mm from center (35mm to 75mm total) -->
+        <!-- CORRECTED: 0mm to 20mm per finger (35mm to 75mm total opening) -->
         <limit lower="0.0" upper="0.020" effort="140" velocity="0.45"/>
       </joint>
 
@@ -180,7 +180,7 @@
         <parent link="${prefix}base_link"/>
         <child link="${prefix}right_finger_link"/>
         <axis xyz="1.0 0.0 0.0"/>
-        <!-- CORRECTED: Mirror the left finger -->
+        <!-- CORRECTED: -20mm to 0mm per finger (mirror of left finger) -->
         <limit lower="-0.020" upper="0.0" effort="140" velocity="0.45"/>
         <mimic joint="left_finger_joint" multiplier="1.0"/>
       </joint>
