@@ -12,9 +12,15 @@
   <depend>urdf</depend>
   <depend>xacro</depend>
 
+  <!-- Only keep these if you're actually using them in the display launch -->
   <exec_depend>robot_state_publisher</exec_depend>
-  <exec_depend>joint_state_publisher</exec_depend>
+  <exec_depend>joint_state_publisher_gui</exec_depend>  <!-- Changed from joint_state_publisher -->
   <exec_depend>rviz2</exec_depend>
+
+  <test_depend>ament_copyright</test_depend>
+  <test_depend>ament_flake8</test_depend>
+  <test_depend>ament_pep257</test_depend>
+  <test_depend>launch_testing</test_depend>
 
   <export>
     <build_type>ament_cmake</build_type>
