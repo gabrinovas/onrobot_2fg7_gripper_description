@@ -47,14 +47,16 @@
           <inertia ixx="6e-06" iyy="5e-06" izz="2e-06" ixy="-0.0" iyz="-0.0" ixz="1e-06"/>
         </inertial>
         <visual>
-          <origin xyz="0.054361 0.029494 -0.12005" rpy="0 0 0"/>
+          <!-- FIX: Rotated 180° around Z-axis and adjusted origin -->
+          <origin xyz="0.054361 0.029494 -0.12005" rpy="0 0 3.14159"/>
           <geometry>
             <mesh filename="package://onrobot_2fg7_gripper_description/meshes/right_finger_link.stl" scale="0.001 0.001 0.001"/>
           </geometry>
           <material name="silver"/>
         </visual>
         <collision name="right_finger_collision">
-          <origin xyz="0.054361 0.029494 -0.12005" rpy="0 0 0"/>
+          <!-- FIX: Same rotation as visual -->
+          <origin xyz="0.054361 0.029494 -0.12005" rpy="0 0 3.14159"/>
           <geometry>
             <mesh filename="package://onrobot_2fg7_gripper_description/meshes/right_finger_link.stl" scale="0.001 0.001 0.001"/>
           </geometry>
@@ -68,33 +70,36 @@
           <inertia ixx="6e-06" iyy="5e-06" izz="2e-06" ixy="-0.0" iyz="0.0" ixz="-1e-06"/>
         </inertial>
         <visual>
-          <origin xyz="-0.032239 0.029494 -0.12005" rpy="0 0 0"/>
+          <!-- FIX: Rotated 180° around Z-axis and adjusted origin -->
+          <origin xyz="-0.032239 0.029494 -0.12005" rpy="0 0 3.14159"/>
           <geometry>
             <mesh filename="package://onrobot_2fg7_gripper_description/meshes/left_finger_link.stl" scale="0.001 0.001 0.001"/>
           </geometry>
           <material name="silver"/>
         </visual>
         <collision name="left_finger_collision">
-          <origin xyz="-0.032239 0.029494 -0.12005" rpy="0 0 0"/>
+          <!-- FIX: Same rotation as visual -->
+          <origin xyz="-0.032239 0.029494 -0.12005" rpy="0 0 3.14159"/>
           <geometry>
             <mesh filename="package://onrobot_2fg7_gripper_description/meshes/left_finger_link.stl" scale="0.001 0.001 0.001"/>
           </geometry>
         </collision>
       </link>
 
+      <!-- FIX: Joint origins and axes for proper alignment -->
       <joint name="left_finger_joint" type="prismatic">
-        <origin xyz="0.032239 -0.029494 0.12005" rpy="0 0 0"/>
+        <origin xyz="-0.032239 0.029494 0.12005" rpy="0 0 0"/>
         <parent link="${prefix}base_link"/>
         <child link="${prefix}left_finger_link"/>
-        <axis xyz="-1.0 0.0 0.0"/>
-        <limit lower="0.0" upper="0.019" effort="140" velocity="0.45"/> <!-- total 0.38 -->
+        <axis xyz="1.0 0.0 0.0"/>
+        <limit lower="0.0" upper="0.019" effort="140" velocity="0.45"/>
       </joint>
 
       <joint name="right_finger_joint" type="prismatic">
-        <origin xyz="-0.054361 -0.029494 0.12005" rpy="0 0 0"/>
+        <origin xyz="0.054361 0.029494 0.12005" rpy="0 0 0"/>
         <parent link="${prefix}base_link"/>
         <child link="${prefix}right_finger_link"/>
-        <axis xyz="1.0 0.0 0.0"/>
+        <axis xyz="-1.0 0.0 0.0"/>
         <limit lower="-0.019" upper="0.019" effort="140" velocity="0.45"/>
         <mimic joint="left_finger_joint" multiplier="1.0"/>
       </joint>
@@ -130,14 +135,16 @@
           <inertia ixx="6e-06" iyy="5e-06" izz="2e-06" ixy="-0.0" iyz="0.0" ixz="-1e-06"/>
         </inertial>
         <visual>
-          <origin xyz="0.054361 0.029494 -0.12005" rpy="0 0 0"/>
+          <!-- FIX: Rotated 180° around Z-axis -->
+          <origin xyz="0.054361 0.029494 -0.12005" rpy="0 0 3.14159"/>
           <geometry>
             <mesh filename="package://onrobot_2fg7_gripper_description/meshes/inwards/right_finger_link.stl" scale="0.001 0.001 0.001"/>
           </geometry>
           <material name="silver"/>
         </visual>
         <collision>
-          <origin xyz="0.054361 0.029494 -0.12005" rpy="0 0 0"/>
+          <!-- FIX: Same rotation as visual -->
+          <origin xyz="0.054361 0.029494 -0.12005" rpy="0 0 3.14159"/>
           <geometry>
             <mesh filename="package://onrobot_2fg7_gripper_description/meshes/inwards/right_finger_link.stl" scale="0.001 0.001 0.001"/>
           </geometry>
@@ -151,36 +158,36 @@
           <inertia ixx="6e-06" iyy="5e-06" izz="2e-06" ixy="-0.0" iyz="-0.0" ixz="1e-06"/>
         </inertial>
         <visual>
-          <origin xyz="-0.032239 0.029494 -0.12005" rpy="0 0 0"/>
+          <!-- FIX: Rotated 180° around Z-axis -->
+          <origin xyz="-0.032239 0.029494 -0.12005" rpy="0 0 3.14159"/>
           <geometry>
             <mesh filename="package://onrobot_2fg7_gripper_description/meshes/inwards/left_finger_link.stl" scale="0.001 0.001 0.001"/>
           </geometry>
           <material name="silver"/>
         </visual>
         <collision>
-          <origin xyz="-0.032239 0.029494 -0.12005" rpy="0 0 0"/>
+          <!-- FIX: Same rotation as visual -->
+          <origin xyz="-0.032239 0.029494 -0.12005" rpy="0 0 3.14159"/>
           <geometry>
             <mesh filename="package://onrobot_2fg7_gripper_description/meshes/inwards/left_finger_link.stl" scale="0.001 0.001 0.001"/>
           </geometry>
         </collision>
       </link>
 
-      <!-- For outward configuration -->
+      <!-- FIX: Joint origins and axes for proper alignment -->
       <joint name="left_finger_joint" type="prismatic">
-        <origin xyz="0.032239 -0.029494 0.12005" rpy="0 0 0"/>
+        <origin xyz="-0.032239 0.029494 0.12005" rpy="0 0 0"/>
         <parent link="${prefix}base_link"/>
         <child link="${prefix}left_finger_link"/>
-        <axis xyz="-1.0 0.0 0.0"/>
-        <!-- CORRECTED: 0mm to 17.5mm per finger (35mm to 70mm total opening) -->
+        <axis xyz="1.0 0.0 0.0"/>
         <limit lower="0.0" upper="0.0175" effort="140" velocity="0.45"/>
       </joint>
 
       <joint name="right_finger_joint" type="prismatic">
-        <origin xyz="-0.054361 -0.029494 0.12005" rpy="0 0 0"/>
+        <origin xyz="0.054361 0.029494 0.12005" rpy="0 0 0"/>
         <parent link="${prefix}base_link"/>
         <child link="${prefix}right_finger_link"/>
-        <axis xyz="1.0 0.0 0.0"/>
-        <!-- CORRECTED: -17.5mm to 0mm per finger (mirror of left finger) -->
+        <axis xyz="-1.0 0.0 0.0"/>
         <limit lower="-0.0175" upper="0.0" effort="140" velocity="0.45"/>
         <mimic joint="left_finger_joint" multiplier="1.0"/>
       </joint>
