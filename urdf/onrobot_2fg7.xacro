@@ -82,12 +82,14 @@
         </collision>
       </link>
 
+      <!-- FIXED: Consistent joint limits - 17.5mm per finger (35mm total opening) -->
       <joint name="left_finger_joint" type="prismatic">
         <origin xyz="0.032239 -0.029494 0.12005" rpy="0 0 0"/>
         <parent link="${prefix}base_link"/>
         <child link="${prefix}left_finger_link"/>
         <axis xyz="-1.0 0.0 0.0"/>
-        <limit lower="0.0" upper="0.019" effort="140" velocity="0.45"/> <!-- total 0.38 -->
+        <!-- CORRECTED: 0.0 to 0.0175m (17.5mm per finger, 35mm total opening) -->
+        <limit lower="0.0" upper="0.0175" effort="140" velocity="0.45"/>
       </joint>
 
       <joint name="right_finger_joint" type="prismatic">
@@ -95,7 +97,8 @@
         <parent link="${prefix}base_link"/>
         <child link="${prefix}right_finger_link"/>
         <axis xyz="1.0 0.0 0.0"/>
-        <limit lower="-0.019" upper="0.019" effort="140" velocity="0.45"/>
+        <!-- CORRECTED: -0.0175 to 0.0m (mirrored left finger) -->
+        <limit lower="-0.0175" upper="0.0" effort="140" velocity="0.45"/>
         <mimic joint="left_finger_joint" multiplier="1.0"/>
       </joint>
     </xacro:if>
@@ -165,13 +168,13 @@
         </collision>
       </link>
 
-      <!-- For outward configuration -->
+      <!-- FIXED: Consistent joint limits for inward configuration -->
       <joint name="left_finger_joint" type="prismatic">
         <origin xyz="0.032239 -0.029494 0.12005" rpy="0 0 0"/>
         <parent link="${prefix}base_link"/>
         <child link="${prefix}left_finger_link"/>
         <axis xyz="-1.0 0.0 0.0"/>
-        <!-- CORRECTED: 0mm to 17.5mm per finger (35mm to 70mm total opening) -->
+        <!-- CORRECTED: 0.0 to 0.0175m (17.5mm per finger, 35mm total opening) -->
         <limit lower="0.0" upper="0.0175" effort="140" velocity="0.45"/>
       </joint>
 
@@ -180,7 +183,7 @@
         <parent link="${prefix}base_link"/>
         <child link="${prefix}right_finger_link"/>
         <axis xyz="1.0 0.0 0.0"/>
-        <!-- CORRECTED: -17.5mm to 0mm per finger (mirror of left finger) -->
+        <!-- CORRECTED: -0.0175 to 0.0m (mirrored left finger) -->
         <limit lower="-0.0175" upper="0.0" effort="140" velocity="0.45"/>
         <mimic joint="left_finger_joint" multiplier="1.0"/>
       </joint>

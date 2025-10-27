@@ -15,8 +15,8 @@ setup(
     ],
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='gabri',
-    maintainer_email='gabri@todo.todo',
+    maintainer='Gabriel Novas',
+    maintainer_email='gabriel.novas@aimen.es',
     description='URDF description and meshes for OnRobot 2FG7 gripper',  # Updated description
     license='Apache-2.0',  # Match your license
     tests_require=['pytest'],
